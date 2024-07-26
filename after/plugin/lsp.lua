@@ -12,7 +12,7 @@ end)
 -- Ensure mason and mason-lspconfig are installed and set up
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'pyright', 'pylsp', 'lua_ls'}, -- Ensure Python LSPs are installed
+    ensure_installed = {'pyright', 'pylsp', 'lua_ls', 'tsserver', 'vimls', 'html'}, -- Ensure Python LSPs are installed
     handlers = {
         function(server_name)
             local opts = lsp_zero.build_options(server_name, {})
@@ -30,7 +30,7 @@ cmp.setup({
 
     -- scroll up and down the documentation window
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),   
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
   }),
 })
 
